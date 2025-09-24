@@ -1,0 +1,5 @@
+//configuracio del VSC
+.vscode
+
+//dependencies de PHPMailer
+vendor
