@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="style/style.css">
 </head>
 <body>
-    <form method="POST" action="../index.php">
+    <form method="POST">
         <label for="name">Name:</label>
         <input type="text" id="name" name="name">
 
