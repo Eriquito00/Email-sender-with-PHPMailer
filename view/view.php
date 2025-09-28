@@ -19,7 +19,7 @@ require_once "controller/controller.php";
         <input type="text" id="email" name="email" value="<?= htmlspecialchars($email, ENT_QUOTES, "UTF-8"); ?>">
 
         <label for="message">Message:</label>
-        <textarea id="message" name="message" maxlength="200"><?= htmlspecialchars($missatge, ENT_QUOTES, "UTF-8"); ?></textarea>
+        <textarea id="message" name="message" maxlength="150"><?= htmlspecialchars($missatge, ENT_QUOTES, "UTF-8"); ?></textarea>
 
         <p><?= $error ?></p>
 
