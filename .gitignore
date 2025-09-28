@@ -3,3 +3,6 @@
 
 //dependencies de PHPMailer
 vendor
+
+//correu electronic per enviar correus
+config.php

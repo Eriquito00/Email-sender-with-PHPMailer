@@ -1,5 +1,9 @@
+<?php
+require_once "controller/controller.php";
+?>
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ca">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,15 +11,17 @@
     <link rel="stylesheet" href="style/style.css">
 </head>
 <body>
-    <form method="POST">
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name">
+    <form method="POST" action="index.php">
+        <label for="subjecte">Subject:</label>
+        <input type="text" id="subjecte" name="subjecte" maxlength="50" value="<?= htmlspecialchars($subjecte, ENT_QUOTES, "UTF-8"); ?>">
 
         <label for="email">Email:</label>
-        <input type="email" id="email" name="email">
+        <input type="text" id="email" name="email" value="<?= htmlspecialchars($email, ENT_QUOTES, "UTF-8"); ?>">
 
         <label for="message">Message:</label>
-        <textarea id="message" name="message"></textarea>
+        <textarea id="message" name="message" maxlength="200"><?= htmlspecialchars($missatge, ENT_QUOTES, "UTF-8"); ?></textarea>
+
+        <p><?= $error ?></p>
 
         <button type="submit" name="submit">Submit</button>
     </form>
