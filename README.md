@@ -1,226 +1,226 @@
-# Email Sender with PHPMailer
+# Enviador de Correos con PHPMailer
 
-A simple and user-friendly web application built with PHP that allows users to send emails through a web form interface using the PHPMailer library.
+Una aplicación web simple y fácil de usar construida con PHP que permite a los usuarios enviar correos electrónicos a través de una interfaz de formulario web utilizando la librería PHPMailer.
 
-## What the Project Does
+## Qué hace el Proyecto
 
-This project provides a clean web interface for sending emails with the following features:
-- **Web Form Interface**: Simple HTML form for composing emails with subject, recipient email, and message fields
-- **Server-Side Email Processing**: Uses PHPMailer library to handle SMTP email sending
-- **Input Validation**: Validates email addresses and ensures all required fields are filled
-- **Error Handling**: Provides clear feedback to users about success or failure of email sending
-- **Responsive Design**: Clean, dark-themed CSS styling that works across different screen sizes
-- **Gmail SMTP Integration**: Optimized for Gmail's SMTP server configuration
+Este proyecto proporciona una interfaz web limpia para enviar correos electrónicos con las siguientes características:
+- **Interfaz de Formulario Web**: Formulario HTML simple para redactar correos electrónicos con campos de asunto, correo del destinatario y mensaje
+- **Procesamiento de Correos del Lado del Servidor**: Utiliza la librería PHPMailer para manejar el envío de correos SMTP
+- **Validación de Entrada**: Valida direcciones de correo electrónico y asegura que todos los campos requeridos estén completos
+- **Manejo de Errores**: Proporciona retroalimentación clara a los usuarios sobre el éxito o fallo del envío de correos
+- **Diseño Responsivo**: Estilo CSS limpio con tema oscuro que funciona en diferentes tamaños de pantalla
+- **Integración SMTP de Gmail**: Optimizado para la configuración del servidor SMTP de Gmail
 
-## Dependencies
+## Dependencias
 
-This project requires the following dependencies:
+Este proyecto requiere las siguientes dependencias:
 
-### 1. XAMPP Installation
+### 1. Instalación de XAMPP
 
-**XAMPP** is required to run this PHP application locally on your computer.
+**XAMPP** es requerido para ejecutar esta aplicación PHP localmente en tu computadora.
 
-#### Installing XAMPP:
-1. Download XAMPP from the official website: [https://www.apachefriends.org/](https://www.apachefriends.org/)
-2. Choose the version compatible with your operating system (Windows, macOS, or Linux)
-3. Run the installer and follow the installation wizard
-4. Install XAMPP in the default location (usually `C:\xampp` on Windows or `/Applications/XAMPP` on macOS)
+#### Instalando XAMPP:
+1. Descarga XAMPP desde el sitio web oficial: [https://www.apachefriends.org/](https://www.apachefriends.org/)
+2. Elige la versión compatible con tu sistema operativo (Windows, macOS, o Linux)
+3. Ejecuta el instalador y sigue el asistente de instalación
+4. Instala XAMPP en la ubicación predeterminada (usualmente `C:\xampp` en Windows o `/Applications/XAMPP` en macOS)
 
-#### Setting up the Project in XAMPP:
-1. Navigate to your XAMPP installation directory
-2. Open the `htdocs` folder (this is where XAMPP serves websites from)
-3. **Optional but Recommended**: Create a `projects` folder inside `htdocs` to organize your websites:
+#### Configurando el Proyecto en XAMPP:
+1. Navega a tu directorio de instalación de XAMPP
+2. Abre la carpeta `htdocs` (desde aquí XAMPP sirve los sitios web)
+3. **Opcional pero Recomendado**: Crea una carpeta `projects` dentro de `htdocs` para organizar tus sitios web:
    ```
    htdocs/
    ├── projects/
-   │   └── email-sender/  (your project will go here)
-   └── (other existing files)
+   │   └── email-sender/  (tu proyecto irá aquí)
+   └── (otros archivos existentes)
    ```
-4. Clone this repository into the appropriate folder:
+4. Clona este repositorio en la carpeta apropiada:
    ```bash
-   cd /path/to/xampp/htdocs/projects/
+   cd /ruta/a/xampp/htdocs/projects/
    git clone https://github.com/Eriquito00/Email-sender-with-PHPMailer.git email-sender
    ```
 
-### 2. PHP Dependencies
+### 2. Dependencias PHP
 
-This project uses **Composer** to manage PHP dependencies:
-- **PHPMailer**: Version 6.10+ for email sending functionality
+Este proyecto utiliza **Composer** para manejar las dependencias PHP:
+- **PHPMailer**: Versión 6.10+ para funcionalidad de envío de correos
 
-To install PHP dependencies:
+Para instalar las dependencias PHP:
 ```bash
-cd /path/to/your/project
+cd /ruta/a/tu/proyecto
 composer install
 ```
 
-## How to Run the Project
+## Cómo Ejecutar el Proyecto
 
-### Step 1: Start XAMPP Services
-1. Open XAMPP Control Panel
-2. Start the **Apache** service (required for PHP)
-3. Optionally start **MySQL** if you plan to extend the project with database functionality
+### Paso 1: Iniciar los Servicios de XAMPP
+1. Abrir el Panel de Control de XAMPP
+2. Iniciar el servicio **Apache** (requerido para PHP)
+3. Opcionalmente iniciar **MySQL** si planeas extender el proyecto con funcionalidad de base de datos
 
-### Step 2: Gmail Account Configuration
+### Paso 2: Configuración de la Cuenta de Gmail
 
-**Important**: This project is optimized for Gmail's SMTP server. You'll need a Gmail account to send emails.
+**Importante**: Este proyecto está optimizado para el servidor SMTP de Gmail. Necesitarás una cuenta de Gmail para enviar correos.
 
-#### Setting up Gmail for the Application:
-1. **Log into your Gmail account**
-2. **Enable 2-Step Verification**:
-   - Go to your Google Account settings: [https://myaccount.google.com/](https://myaccount.google.com/)
-   - Navigate to "Security" → "2-Step Verification"
-   - Follow the prompts to enable 2-Step Verification
+#### Configurando Gmail para la Aplicación:
+1. **Inicia sesión en tu cuenta de Gmail**
+2. **Habilita la Verificación en 2 Pasos**:
+   - Ve a la configuración de tu cuenta de Google: [https://myaccount.google.com/](https://myaccount.google.com/)
+   - Navega a "Seguridad" → "Verificación en 2 pasos"
+   - Sigue las instrucciones para habilitar la Verificación en 2 pasos
 
-3. **Create an App Password**:
-   - In the same "Security" section, find "App passwords"
-   - Click "Generate app passwords"
-   - Choose "Mail" as the app type
-   - Enter a custom name for your app (e.g., "Email Sender Project")
-   - Google will generate a 16-character password - **save this password**, you'll need it for configuration
+3. **Crea una Contraseña de Aplicación**:
+   - En la misma sección de "Seguridad", busca "Contraseñas de aplicaciones"
+   - Haz clic en "Generar contraseñas de aplicaciones"
+   - Elige "Correo" como tipo de aplicación
+   - Introduce un nombre personalizado para tu aplicación (ej., "Proyecto Enviador de Correos")
+   - Google generará una contraseña de 16 caracteres - **guarda esta contraseña**, la necesitarás para la configuración
 
-### Step 3: Project Configuration
+### Paso 3: Configuración del Proyecto
 
-1. **Copy the configuration template**:
+1. **Copia la plantilla de configuración**:
    ```bash
    cp config.example.php config.php
    ```
 
-2. **Edit the `config.php` file** with your Gmail credentials:
+2. **Edita el archivo `config.php`** con tus credenciales de Gmail:
    ```php
    <?php
    
    return [
-       "SMTP_HOST" => "smtp.gmail.com",              // Gmail SMTP server
-       "SMTP_USER" => "your-email@gmail.com",       // Your Gmail address
-       "SMTP_PASS" => "your-16-char-app-password",  // The app password from Step 2
-       "SMTP_PORT" => 587,                          // Gmail SMTP port
-       "SMTP_SECURE" => "tls"                       // Security protocol
+       "SMTP_HOST" => "smtp.gmail.com",              // Servidor SMTP de Gmail
+       "SMTP_USER" => "tu-email@gmail.com",         // Tu dirección de Gmail
+       "SMTP_PASS" => "tu-contraseña-app-16-chars", // La contraseña de aplicación del Paso 2
+       "SMTP_PORT" => 587,                          // Puerto SMTP de Gmail
+       "SMTP_SECURE" => "tls"                       // Protocolo de seguridad
    ];
    
    ?>
    ```
 
-   **Example configuration**:
+   **Ejemplo de configuración**:
    ```php
    return [
        "SMTP_HOST" => "smtp.gmail.com",
-       "SMTP_USER" => "john.doe@gmail.com",
-       "SMTP_PASS" => "abcd efgh ijkl mnop",  // Your generated app password
+       "SMTP_USER" => "juan.perez@gmail.com",
+       "SMTP_PASS" => "abcd efgh ijkl mnop",  // Tu contraseña de aplicación generada
        "SMTP_PORT" => 587,
        "SMTP_SECURE" => "tls"
    ];
    ```
 
-### Step 4: Access the Application
+### Paso 4: Acceder a la Aplicación
 
-1. Open your web browser
-2. Navigate to: `http://localhost/projects/email-sender/` (adjust the path based on where you placed the project)
-3. You should see the email form interface
+1. Abrir tu navegador web
+2. Navegar a: `http://localhost/projects/email-sender/` (ajusta la ruta según donde hayas colocado el proyecto)
+3. Deberías ver la interfaz del formulario de correo
 
-## Usage
+## Uso
 
-### Sending an Email:
-1. **Subject**: Enter the email subject (maximum 50 characters)
-2. **Email**: Enter the recipient's email address
-3. **Message**: Enter your message (maximum 150 characters)
-4. Click **Submit** to send the email
+### Enviando un Correo:
+1. **Asunto**: Introduce el asunto del correo (máximo 50 caracteres)
+2. **Email**: Introduce la dirección de correo del destinatario
+3. **Mensaje**: Introduce tu mensaje (máximo 150 caracteres)
+4. Haz clic en **Enviar** para enviar el correo
 
-### Form Validation:
-- All fields are required
-- Email addresses are validated for proper format
-- Character limits are enforced
-- Clear error messages are displayed for invalid inputs
+### Validación del Formulario:
+- Todos los campos son requeridos
+- Las direcciones de correo electrónico son validadas para el formato apropiado
+- Los límites de caracteres son aplicados
+- Se muestran mensajes de error claros para entradas inválidas
 
-### Success/Error Messages:
-- **Success**: "El correu s'ha enviat correctament." (The email has been sent successfully.)
-- **Errors**: Specific error messages for validation failures or SMTP issues
+### Mensajes de Éxito/Error:
+- **Éxito**: "El correu s'ha enviat correctament." (El correo ha sido enviado correctamente.)
+- **Errores**: Mensajes de error específicos para fallos de validación o problemas SMTP
 
-## Project Structure
+## Estructura del Proyecto
 
 ```
 Email-sender-with-PHPMailer/
 ├── controller/
-│   ├── controller.php      # Form processing and validation logic
-│   └── mailer.php         # PHPMailer configuration and email sending
+│   ├── controller.php      # Lógica de procesamiento de formularios y validación
+│   └── mailer.php         # Configuración de PHPMailer y envío de correos
 ├── view/
-│   └── view.php           # HTML template for the email form
+│   └── view.php           # Plantilla HTML para el formulario de correo
 ├── style/
-│   └── style.css          # CSS styling for the web interface
-├── vendor/                # Composer dependencies (auto-generated)
-├── config.example.php     # Configuration template
-├── config.php            # Your actual configuration (create from example)
-├── index.php             # Main entry point
-├── composer.json         # PHP dependency configuration
-├── composer.lock         # Dependency lock file
-├── .gitignore           # Git ignore rules
-├── LICENSE              # MIT License
-└── README.md            # This documentation
+│   └── style.css          # Estilos CSS para la interfaz web
+├── vendor/                # Dependencias de Composer (auto-generado)
+├── config.example.php     # Plantilla de configuración
+├── config.php            # Tu configuración actual (crear desde el ejemplo)
+├── index.php             # Punto de entrada principal
+├── composer.json         # Configuración de dependencias PHP
+├── composer.lock         # Archivo de bloqueo de dependencias
+├── .gitignore           # Reglas de ignorar de Git
+├── LICENSE              # Licencia MIT
+└── README.md            # Esta documentación
 ```
 
-### Key Components:
+### Componentes Clave:
 
-- **`index.php`**: Entry point that loads the view
-- **`controller/controller.php`**: Handles form submission, validation, and error messages
-- **`controller/mailer.php`**: Contains the PHPMailer configuration and email sending logic
-- **`view/view.php`**: HTML template with embedded PHP for form rendering
-- **`style/style.css`**: Responsive CSS with dark theme styling
-- **`config.php`**: SMTP configuration file (you create this from the example)
+- **`index.php`**: Punto de entrada que carga la vista
+- **`controller/controller.php`**: Maneja el envío de formularios, validación y mensajes de error
+- **`controller/mailer.php`**: Contiene la configuración de PHPMailer y la lógica de envío de correos
+- **`view/view.php`**: Plantilla HTML con PHP integrado para el renderizado del formulario
+- **`style/style.css`**: CSS responsivo con estilo de tema oscuro
+- **`config.php`**: Archivo de configuración SMTP (lo creas desde el ejemplo)
 
-## Security Notes
+## Notas de Seguridad
 
-### Important Security Considerations:
+### Consideraciones Importantes de Seguridad:
 
-1. **Configuration File Protection**:
-   - **Never commit `config.php` to version control** - it contains sensitive credentials
-   - The `.gitignore` file is configured to exclude `config.php`
-   - Only commit `config.example.php` as a template
+1. **Protección del Archivo de Configuración**:
+   - **Nunca hagas commit de `config.php` al control de versiones** - contiene credenciales sensibles
+   - El archivo `.gitignore` está configurado para excluir `config.php`
+   - Solo haz commit de `config.example.php` como plantilla
 
-2. **App Passwords**:
-   - Use Gmail App Passwords instead of your regular Gmail password
-   - App Passwords are more secure and can be revoked independently
-   - Never share your app password or commit it to code repositories
+2. **Contraseñas de Aplicación**:
+   - Usa Contraseñas de Aplicación de Gmail en lugar de tu contraseña regular de Gmail
+   - Las Contraseñas de Aplicación son más seguras y pueden ser revocadas independientemente
+   - Nunca compartas tu contraseña de aplicación o la incluyas en repositorios de código
 
-3. **Input Validation**:
-   - All form inputs are validated server-side
-   - Email addresses are validated using regex patterns
-   - Character limits prevent potential abuse
+3. **Validación de Entrada**:
+   - Todas las entradas del formulario son validadas del lado del servidor
+   - Las direcciones de correo electrónico son validadas usando patrones regex
+   - Los límites de caracteres previenen posible abuso
 
-4. **XSS Protection**:
-   - All user input is properly escaped using `htmlspecialchars()` before display
-   - Prevents cross-site scripting attacks
+4. **Protección XSS**:
+   - Toda entrada del usuario es apropiadamente escapada usando `htmlspecialchars()` antes de mostrarla
+   - Previene ataques de cross-site scripting
 
-5. **SMTP Security**:
-   - Uses TLS encryption for secure email transmission
-   - Gmail's SMTP server provides additional security layers
+5. **Seguridad SMTP**:
+   - Usa cifrado TLS para transmisión segura de correos
+   - El servidor SMTP de Gmail proporciona capas adicionales de seguridad
 
-6. **File Permissions**:
-   - Ensure `config.php` has restrictive file permissions (600 or 644)
-   - Prevent unauthorized access to configuration files
+6. **Permisos de Archivos**:
+   - Asegúrate de que `config.php` tenga permisos de archivo restrictivos (600 o 644)
+   - Previene acceso no autorizado a archivos de configuración
 
-### Recommended Security Practices:
+### Prácticas de Seguridad Recomendadas:
 
-- Regularly rotate your Gmail App Passwords
-- Monitor your Gmail account for unusual activity
-- Consider implementing rate limiting for email sending
-- Add CSRF protection for production use
-- Use environment variables for sensitive configuration in production environments
+- Rota regularmente tus Contraseñas de Aplicación de Gmail
+- Monitorea tu cuenta de Gmail para actividad inusual
+- Considera implementar limitación de velocidad para el envío de correos
+- Añade protección CSRF para uso en producción
+- Usa variables de entorno para configuración sensible en entornos de producción
 
-### Production Deployment Notes:
+### Notas de Despliegue en Producción:
 
-- This project is designed for local development and testing
-- For production use, consider additional security measures:
-  - HTTPS encryption
-  - Database logging of sent emails
-  - Rate limiting and spam prevention
-  - User authentication and authorization
-  - Input sanitization beyond basic validation
+- Este proyecto está diseñado para desarrollo y pruebas locales
+- Para uso en producción, considera medidas de seguridad adicionales:
+  - Cifrado HTTPS
+  - Registro en base de datos de correos enviados
+  - Limitación de velocidad y prevención de spam
+  - Autenticación y autorización de usuarios
+  - Sanitización de entrada más allá de la validación básica
 
 ---
 
-## License
+## Licencia
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+Este proyecto está licenciado bajo la Licencia MIT - consulta el archivo [LICENSE](LICENSE) para más detalles.
 
-## Contributing
+## Contribuciones
 
-Feel free to fork this project and submit pull requests for improvements or bug fixes.
+Siéntete libre de hacer fork de este proyecto y enviar pull requests para mejoras o corrección de errores.
