@@ -8,7 +8,7 @@
 <?php
 
 return [
-    "SMTP_HOST" => "smtp.example.com",          # Servidor SMTP de google perque no tinc calers
+    "SMTP_HOST" => "smtp.gmail.com",
     "SMTP_USER" => "example@example.com",       # Tu email normal i corrent
     "SMTP_PASS" => "contraseñaExample",         # Contrasenya d'Aplicacio del teu email
     "SMTP_PORT" => 587,
