@@ -20,6 +20,7 @@
         <p><?= $error ?></p>
 
         <button type="submit" name="submit">Submit</button>
+        <button type="submit" name="history_open">History</button>
     </form>
 </body>
 </html>
