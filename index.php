@@ -23,9 +23,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             if (!enviarCorreu($subjecte, $email, $missatge)) $error = "No s'ha pogut enviar el correu.";
             else{
                 $error = "El correu s'ha enviat correctament.<br>";
-                //require './model/model.php';
-                //$sender = require './config.php';
-                //$error .= insertHistory($sender["SMTP_USER"], $email, $subjecte, $missatge);
+                require './model/model.php';
+                $sender = require './config.php';
+                if (insertHistory($sender["SMTP_USER"], $email, $subjecte, $missatge)){
+                    $error .= "Historial actualitzat correctament.";
+                    //TODO: Crear objeto de tipo mail y guardarlo para poder mostrarlo despues en una tabla
+                }
+                else $error .= "No s'ha pogut actualitzar l'historial. Error amb la base de dades.";
             }
             $subjecte = $email = $missatge = "";
         }
