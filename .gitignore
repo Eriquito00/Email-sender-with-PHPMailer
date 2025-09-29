@@ -6,3 +6,6 @@ vendor
 
 //correu electronic per enviar correus
 config.php
+
+//base de dades amb el historial dels correus enviats
+historydb.db

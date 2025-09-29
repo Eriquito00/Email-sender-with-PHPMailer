@@ -1,7 +1,3 @@
-<?php
-require_once "controller/controller.php";
-?>
-
 <!DOCTYPE html>
 <html lang="ca">
 <head>
