@@ -145,35 +145,6 @@ Esta aplicación incluye una funcionalidad de historial que **automáticamente**
 - **Éxito**: "El correu s'ha enviat correctament. Historial actualitzat correctament."
 - **Errores**: Mensajes de error específicos para fallos de validación o problemas SMTP
 
-## Funcionalidad de Historial de Correos
-
-### ¿Qué es el Historial?
-La aplicación incluye un sistema automático de historial que registra todos los correos enviados exitosamente en una base de datos local SQLite.
-
-### Características del Historial:
-- **Creación Automática**: La base de datos se crea automáticamente al enviar el primer correo
-- **Archivo de Base de Datos**: `historydb.db` (ubicado en la raíz del proyecto)
-- **Información Almacenada**:
-  - Remitente (email configurado en `config.php`)
-  - Destinatario del correo
-  - Asunto del mensaje
-  - Cuerpo completo del mensaje
-
-### Cómo Acceder al Historial:
-1. En la página principal, haz clic en el botón **"History"**
-2. Se mostrará una tabla con todos los correos enviados
-3. Para volver al formulario, haz clic en **"Close History"**
-
-### Casos Especiales:
-- Si no has enviado ningún correo, la tabla del historial aparecerá vacía
-- Si hay problemas con la base de datos, se mostrará un mensaje de error
-- El historial solo incluye correos **enviados exitosamente**
-
-### Privacidad y Seguridad:
-- El archivo `historydb.db` está automáticamente excluido del control de versiones
-- La información se almacena solo localmente en tu instalación
-- **Importante**: No compartas el archivo de base de datos ya que contiene información confidencial
-
 ## Estructura del Proyecto
 
 ```
@@ -212,8 +183,7 @@ Email-sender-with-PHPMailer/
 
 2. **Protección de la Base de Datos de Historial**:
    - **La base de datos `historydb.db` está excluida del control de versiones** - contiene información confidencial de los correos enviados
-   - El archivo `.gitignore` está configurado para excluir `historydb.db` automáticamente
-   - Esta base de datos se crea automáticamente y contiene mensajes privados, destinatarios y asuntos
+   - El archivo `.gitignore` está configurado para excluir `historydb.db` por defecto
    - **Nunca compartas ni subas esta base de datos** a repositorios públicos
 
 3. **Contraseñas de Aplicación**:
