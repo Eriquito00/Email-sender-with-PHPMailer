@@ -123,6 +123,18 @@ composer install
 3. **Mensaje**: Introduce tu mensaje (máximo 150 caracteres)
 4. Haz clic en **Enviar** para enviar el correo
 
+### Historial de Correos:
+Esta aplicación incluye una funcionalidad de historial que **automáticamente** guarda todos los correos enviados:
+
+1. **Base de Datos Automática**: Al enviar tu primer correo, se crea automáticamente una base de datos SQLite (`historydb.db`)
+2. **Acceso al Historial**: Haz clic en el botón **"History"** en la interfaz principal para ver todos los correos enviados
+3. **Información Guardada**: Para cada correo se almacena:
+   - Remitente (tu email configurado)
+   - Destinatario
+   - Asunto del correo
+   - Mensaje completo
+4. **Sin correos enviados**: Si no has enviado ningún correo aún, el historial aparecerá vacío
+
 ### Validación del Formulario:
 - Todos los campos son requeridos
 - Las direcciones de correo electrónico son validadas para el formato apropiado
@@ -130,7 +142,7 @@ composer install
 - Se muestran mensajes de error claros para entradas inválidas
 
 ### Mensajes de Éxito/Error:
-- **Éxito**: "El correu s'ha enviat correctament."
+- **Éxito**: "El correu s'ha enviat correctament. Historial actualitzat correctament."
 - **Errores**: Mensajes de error específicos para fallos de validación o problemas SMTP
 
 ## Estructura del Proyecto
@@ -140,13 +152,18 @@ Email-sender-with-PHPMailer/
 ├── controller/
 │   ├── controller.php    # Lógica de procesamiento de formularios y validación
 │   └── mailer.php        # Configuración de PHPMailer y envío de correos
+├── model/
+│   └── model.php         # Funciones de base de datos para historial de correos
 ├── view/
-│   └── view.php          # Plantilla HTML para el formulario de correo
+│   ├── view.php          # Plantilla HTML para el formulario de correo
+│   └── history.php       # Plantilla HTML para mostrar el historial
 ├── style/
-│   └── style.css         # Estilos CSS para la interfaz web
+│   ├── style.css         # Estilos CSS para la interfaz web principal
+│   └── history.css       # Estilos CSS para la interfaz de historial
 ├── vendor/               # Dependencias de Composer (auto-generado)
 ├── config.example.php    # Plantilla de configuración
 ├── config.php            # Tu configuración actual (crear desde el ejemplo)
+├── historydb.db          # Base de datos SQLite (se crea automáticamente)
 ├── index.php             # Punto de entrada principal
 ├── composer.json         # Configuración de dependencias PHP
 ├── composer.lock         # Archivo de bloqueo de dependencias
@@ -164,7 +181,12 @@ Email-sender-with-PHPMailer/
    - El archivo `.gitignore` está configurado para excluir `config.php` por defecto
    - Solo haz commit de `config.example.php` como plantilla
 
-2. **Contraseñas de Aplicación**:
+2. **Protección de la Base de Datos de Historial**:
+   - **La base de datos `historydb.db` está excluida del control de versiones** - contiene información confidencial de los correos enviados
+   - El archivo `.gitignore` está configurado para excluir `historydb.db` por defecto
+   - **Nunca compartas ni subas esta base de datos** a repositorios públicos
+
+3. **Contraseñas de Aplicación**:
    - Usa Contraseñas de Aplicación de Gmail en lugar de tu contraseña regular de Gmail
    - Nunca compartas tu contraseña de aplicación o la incluyas en repositorios de código
 
