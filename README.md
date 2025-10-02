@@ -194,6 +194,16 @@ Email-sender-with-PHPMailer/
 
 Este proyecto está licenciado bajo la Licencia MIT - consulta el archivo [LICENSE](LICENSE) para más detalles.
 
+La Licencia MIT es una licencia permisiva que permite:
+- ✅ Uso comercial
+- ✅ Modificación
+- ✅ Distribución
+- ✅ Uso privado
+
+Con las siguientes condiciones:
+- ℹ️ Incluir el aviso de copyright
+- ℹ️ Incluir la licencia MIT
+
 ## Contribuciones
 
 Siéntete libre de hacer fork de este proyecto y enviar pull requests para mejoras o corrección de errores.
